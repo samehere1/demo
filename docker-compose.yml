@@ -1,0 +1,19 @@
+services:
+  api:
+    image: sound-realty-api:gbm-v1
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app  # if you want live reload of local files; optional
+    depends_on:
+      - mlflow
+
+  mlflow:
+    image: python:3.10-slim-bookworm
+    working_dir: /app
+    command: sh -c "pip install --no-cache-dir mlflow==2.14.1 && mlflow ui --host 0.0.0.0 --port 5000 --backend-store-uri file:/app/mlruns"
+    ports:
+      - "127.0.0.1:5001:5000"   # <— host=127.0.0.1, port=5001
+    volumes:
+      - ./mlruns:/app/mlruns    # share your local mlruns so UI shows your runs

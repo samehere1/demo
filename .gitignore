@@ -1,0 +1,48 @@
+# --- Python cache ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual environments ---
+.env
+.venv
+env/
+venv/
+*.env
+
+# --- OS / Editor junk ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Build / Packaging ---
+*.egg-info/
+dist/
+build/
+
+# --- Logs ---
+*.log
+
+# --- MLflow experiments (can be huge) ---
+mlruns/
+mlartifacts/
+
+# Model artifacts (keep folder, ignore files)
+model/*
+!model/.gitkeep
+
+# --- Data outputs ---
+data/*_scores.csv
+data/*_scores.json
+data/*_tiny.json
+data/future_unseen_examples_scores*.*
+preds.csv
+
+# --- Docker ---
+*.pid
+*.pid.lock
+
+# --- Jupyter ---
+.ipynb_checkpoints/
