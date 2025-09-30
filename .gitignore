@@ -29,10 +29,6 @@ build/
 mlruns/
 mlartifacts/
 
-# Model artifacts (keep folder, ignore files)
-model/*
-!model/.gitkeep
-
 # --- Data outputs ---
 data/*_scores.csv
 data/*_scores.json
@@ -46,3 +42,10 @@ preds.csv
 
 # --- Jupyter ---
 .ipynb_checkpoints/
+
+# --- Model artifacts: allow committed baseline model so API runs --- 
+model/*
+!model/model.pkl
+!model/model_features.json
+!model/feature_importance.png
+!model/.gitkeep
