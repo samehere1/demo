@@ -51,6 +51,17 @@ OpenAPI spec → http://localhost:8080/openapi.json
 
     Swagger curl examples are Linux-style. See “Swagger on Windows” below.
 
+🔮 Training the model
+
+Run locally:
+
+conda activate phdata
+python scripts\train_gbm.py
+
+This logs metrics and artifacts to mlruns/ and saves production artifacts to model/.
+Artifacts include model.pkl, model_features.json, and demographics CSV.
+All logged in MLflow at http://127.0.0.1:5001
+
 .
 📦 Batch Scoring
 From CSV
